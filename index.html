@@ -395,6 +395,163 @@
             color: #888;
         }
 
+        /* NFL Section */
+        .nfl-section {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .nfl-section h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .nfl-comparison {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        @media (max-width: 768px) {
+            .nfl-comparison {
+                grid-template-columns: 1fr;
+            }
+            .nfl-vs {
+                order: -1;
+            }
+        }
+
+        .nfl-team {
+            text-align: center;
+        }
+
+        .nfl-team.oregon {
+            border-left: 5px solid var(--oregon-green);
+            padding-left: 20px;
+        }
+
+        .nfl-team.cal {
+            border-right: 5px solid var(--cal-blue);
+            padding-right: 20px;
+        }
+
+        .nfl-team h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .nfl-team.oregon h3 { color: var(--oregon-green); }
+        .nfl-team.cal h3 { color: var(--cal-blue); }
+
+        .nfl-stat {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .nfl-stat-number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 42px;
+            line-height: 1;
+        }
+
+        .nfl-team.oregon .nfl-stat-number { color: var(--oregon-green); }
+        .nfl-team.cal .nfl-stat-number { color: var(--cal-blue); }
+
+        .nfl-stat-label {
+            font-size: 14px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nfl-vs {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 48px;
+            color: #ccc;
+        }
+
+        .nfl-players {
+            margin-top: 20px;
+        }
+
+        .nfl-players h4 {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .player-card {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            transition: transform 0.2s;
+        }
+
+        .player-card:hover {
+            transform: translateX(5px);
+        }
+
+        .nfl-team.cal .player-card:hover {
+            transform: translateX(-5px);
+        }
+
+        .player-emoji {
+            font-size: 24px;
+        }
+
+        .player-info {
+            text-align: left;
+        }
+
+        .nfl-team.cal .player-info {
+            text-align: right;
+        }
+
+        .player-name {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .player-details {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .nfl-winner-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--oregon-green), var(--oregon-yellow));
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 20px;
+            margin-top: 30px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
         /* Fun Facts */
         .fun-facts {
             background: linear-gradient(135deg, var(--oregon-yellow), var(--cal-gold));
@@ -677,6 +834,126 @@
                     </div>
                     <div class="game-location">@ Cal</div>
                 </div>
+            </div>
+        </section>
+
+        <!-- NFL Success -->
+        <section class="nfl-section">
+            <h2>🏈 NFL Pipeline Comparison</h2>
+            <div class="nfl-comparison">
+                <div class="nfl-team oregon">
+                    <h3>🦆 Oregon Ducks</h3>
+                    <div class="nfl-stat">
+                        <div class="nfl-stat-number">254</div>
+                        <div class="nfl-stat-label">Total Draft Picks</div>
+                    </div>
+                    <div class="nfl-stat">
+                        <div class="nfl-stat-number">25</div>
+                        <div class="nfl-stat-label">First Round Picks</div>
+                    </div>
+                    <div class="nfl-stat">
+                        <div class="nfl-stat-number">4</div>
+                        <div class="nfl-stat-label">Super Bowl Winners</div>
+                    </div>
+                    <div class="nfl-players">
+                        <h4>⭐ Notable NFL Stars</h4>
+                        <div class="player-card">
+                            <span class="player-emoji">🏆</span>
+                            <div class="player-info">
+                                <div class="player-name">Marcus Mariota</div>
+                                <div class="player-details">Heisman Winner • #2 Pick (2015)</div>
+                            </div>
+                        </div>
+                        <div class="player-card">
+                            <span class="player-emoji">💪</span>
+                            <div class="player-info">
+                                <div class="player-name">Justin Herbert</div>
+                                <div class="player-details">Pro Bowl QB • #6 Pick (2020)</div>
+                            </div>
+                        </div>
+                        <div class="player-card">
+                            <span class="player-emoji">🛡️</span>
+                            <div class="player-info">
+                                <div class="player-name">Penei Sewell</div>
+                                <div class="player-details">All-Pro OT • #7 Pick (2021)</div>
+                            </div>
+                        </div>
+                        <div class="player-card">
+                            <span class="player-emoji">🔥</span>
+                            <div class="player-info">
+                                <div class="player-name">Haloti Ngata</div>
+                                <div class="player-details">5x Pro Bowl • Super Bowl Champ</div>
+                            </div>
+                        </div>
+                        <div class="player-card">
+                            <span class="player-emoji">⚡</span>
+                            <div class="player-info">
+                                <div class="player-name">DeAnthony Thomas</div>
+                                <div class="player-details">"Black Mamba" • Super Bowl Champ</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nfl-vs">VS</div>
+
+                <div class="nfl-team cal">
+                    <h3>🐻 Cal Bears</h3>
+                    <div class="nfl-stat">
+                        <div class="nfl-stat-number">200</div>
+                        <div class="nfl-stat-label">Total Draft Picks</div>
+                    </div>
+                    <div class="nfl-stat">
+                        <div class="nfl-stat-number">19</div>
+                        <div class="nfl-stat-label">First Round Picks</div>
+                    </div>
+                    <div class="nfl-stat">
+                        <div class="nfl-stat-number">2</div>
+                        <div class="nfl-stat-label">Super Bowl MVPs</div>
+                    </div>
+                    <div class="nfl-players">
+                        <h4>⭐ Notable NFL Stars</h4>
+                        <div class="player-card">
+                            <div class="player-info">
+                                <div class="player-name">Aaron Rodgers</div>
+                                <div class="player-details">4x MVP • Super Bowl MVP • #24 Pick</div>
+                            </div>
+                            <span class="player-emoji">🐐</span>
+                        </div>
+                        <div class="player-card">
+                            <div class="player-info">
+                                <div class="player-name">Jared Goff</div>
+                                <div class="player-details">#1 Overall Pick (2016) • Pro Bowl</div>
+                            </div>
+                            <span class="player-emoji">🎯</span>
+                        </div>
+                        <div class="player-card">
+                            <div class="player-info">
+                                <div class="player-name">Marshawn Lynch</div>
+                                <div class="player-details">"Beast Mode" • Super Bowl Champ</div>
+                            </div>
+                            <span class="player-emoji">🦁</span>
+                        </div>
+                        <div class="player-card">
+                            <div class="player-info">
+                                <div class="player-name">DeSean Jackson</div>
+                                <div class="player-details">3x Pro Bowl • Punt Return King</div>
+                            </div>
+                            <span class="player-emoji">💨</span>
+                        </div>
+                        <div class="player-card">
+                            <div class="player-info">
+                                <div class="player-name">Tony Gonzalez</div>
+                                <div class="player-details">14x Pro Bowl • HOF TE</div>
+                            </div>
+                            <span class="player-emoji">👑</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <div class="nfl-winner-badge">🦆 Oregon leads in total draft picks!</div>
+                <p style="margin-top: 15px; color: #666;">But Cal has Aaron Rodgers... so there's that 🐐</p>
             </div>
         </section>
 
